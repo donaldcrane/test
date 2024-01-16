@@ -30,7 +30,7 @@ app.get("/posts", (req, res) => {
         })
     }
     
-    res.status(200).send({ success: true, message: allPosts  });
+    res.status(200).send({ success: true, data: allPosts  });
 });
 
 app.listen(port, () => {

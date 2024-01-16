@@ -9,14 +9,14 @@ describe('GET /hello', () => {
       .expect(200)
       .end((err, res) => {
         if (err) return done(err)
-        const message = res.body.message as Post[]
+        const posts = res.body.data as Post[]
         expect(res.body).toMatchObject({success: true})
-        message.forEach(data => {
-            expect(data).toHaveProperty("id");
-            expect(data).toHaveProperty("author");
-            expect(data).toHaveProperty("title");
-            expect(data).toHaveProperty("content");
-            expect(data).toHaveProperty("category");
+        posts.forEach(post => {
+            expect(post).toHaveProperty("id");
+            expect(post).toHaveProperty("author");
+            expect(post).toHaveProperty("title");
+            expect(post).toHaveProperty("content");
+            expect(post).toHaveProperty("category");
           });
         done()
       })
@@ -28,14 +28,14 @@ describe('GET /hello', () => {
       .expect(200)
       .end((err, res) => {
         if (err) return done(err)
-        const message = res.body.message as Post[]
+        const posts = res.body.data as Post[]
         expect(res.body).toMatchObject({success: true})
-        message.forEach(data => {
-            expect(data).toHaveProperty("id");
-            expect(data).toHaveProperty("author");
-            expect(data).toHaveProperty("title");
-            expect(data).toHaveProperty("content");
-            expect(data).toHaveProperty("category");
+        posts.forEach(post => {
+            expect(post).toHaveProperty("id");
+            expect(post).toHaveProperty("author");
+            expect(post).toHaveProperty("title");
+            expect(post).toHaveProperty("content");
+            expect(post).toHaveProperty("category");
           });
         done()
       })
